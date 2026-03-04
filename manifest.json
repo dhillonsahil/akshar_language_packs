@@ -1,0 +1,124 @@
+{
+  "_comment": "Host this file at: https://raw.githubusercontent.com/dhillonsahil/akshar_language_packs/main/manifest.json",
+  "_comment2": "DB files go in GitHub Releases (not raw), because they can be 100MB+.",
+  "schema_version": 1,
+  "packs": [
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "native": "हिंदी",
+      "flag": "🇮🇳",
+      "size_mb": 45,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_hi.db"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "native": "Français",
+      "flag": "🇫🇷",
+      "size_mb": 52,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_fr.db"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "native": "Español",
+      "flag": "🇪🇸",
+      "size_mb": 48,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_es.db"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "native": "Deutsch",
+      "flag": "🇩🇪",
+      "size_mb": 55,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_de.db"
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "native": "Italiano",
+      "flag": "🇮🇹",
+      "size_mb": 42,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_it.db"
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese",
+      "native": "Português",
+      "flag": "🇧🇷",
+      "size_mb": 44,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_pt.db"
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "native": "Русский",
+      "flag": "🇷🇺",
+      "size_mb": 60,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_ru.db"
+    },
+    {
+      "code": "zh",
+      "name": "Chinese",
+      "native": "中文",
+      "flag": "🇨🇳",
+      "size_mb": 70,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_zh.db"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "native": "日本語",
+      "flag": "🇯🇵",
+      "size_mb": 58,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_ja.db"
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "native": "اردو",
+      "flag": "🇵🇰",
+      "size_mb": 30,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_ur.db"
+    },
+    {
+      "code": "el",
+      "name": "Greek",
+      "native": "Ελληνικά",
+      "flag": "🇬🇷",
+      "size_mb": 38,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_el.db"
+    },
+    {
+      "code": "bg",
+      "name": "Bulgarian",
+      "native": "Български",
+      "flag": "🇧🇬",
+      "size_mb": 25,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_bg.db"
+    },
+    {
+      "code": "th",
+      "name": "Thai",
+      "native": "ภาษาไทย",
+      "flag": "🇹🇭",
+      "size_mb": 20,
+      "version": 1,
+      "url": "https://github.com/dhillonsahil/akshar_language_packs/releases/download/v1.0/akshar_th.db"
+    }
+  ]
+}
