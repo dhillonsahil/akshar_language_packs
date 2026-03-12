@@ -1,0 +1,55 @@
+name: Process New Language Pack
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'submissions/**.db' ]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Necessary to compare changes
+
+      - name: Detect New DB File
+        id: detect
+        run: |
+          # Finds the newly added .db file in the submissions folder
+          FILE_PATH=$(git diff --name-only HEAD^ HEAD | grep 'submissions/.*\.db' | head -n 1)
+          if [ -z "$FILE_PATH" ]; then echo "No .db file found"; exit 0; fi
+          
+          FILE_NAME=$(basename "$FILE_PATH")
+          # Generates a dynamic tag (e.g., v1.1, v1.2 based on run number)
+          TAG_NAME="v1.${{ github.run_number }}"
+          
+          echo "path=$FILE_PATH" >> $GITHUB_OUTPUT
+          echo "name=$FILE_NAME" >> $GITHUB_OUTPUT
+          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.detect.outputs.tag }}
+          files: ${{ steps.detect.outputs.path }}
+          name: "Language Pack: ${{ steps.detect.outputs.name }}"
+          body: "Automated release for ${{ steps.detect.outputs.name }} submission."
+
+      - name: Update manifest.json
+        run: |
+          URL="https://github.com{{ github.repository }}/releases/download/${{ steps.detect.outputs.tag }}/${{ steps.detect.outputs.name }}"
+          # Adds the new pack entry to your existing manifest.json
+          jq --arg n "${{ steps.detect.outputs.name }}" --arg u "$URL" \
+          '.packs += [{"name": $n, "url": $u}]' manifest.json > temp.json && mv temp.json manifest.json
+
+      - name: Commit & Push Manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.json
+          git commit -m "Update manifest for ${{ steps.detect.outputs.name }}"
+          git push
