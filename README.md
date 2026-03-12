@@ -5,6 +5,13 @@ This repository accepts **SQLite dictionary databases (`.db`)** for different la
 If you want to contribute a new dictionary, please convert your dataset into the **standard schema below** and submit a **Pull Request**.
 
 ---
+# Important Info
+
+Hello Everyone ! This project was made with the help of many ai tools by me using claude, chatgpt and gemini etc.
+I had very less time and needed a app for myself so i made this this repo contains many files 
+only manifest.json is required others are just some files i made with ai to make process fast and convert some files to .db to get things done 
+mig.py and migrate was used to convert hindi database to a new schema supporting many languages translation
+So Have fun doing it
 
 # 📦 Database Format
 
